@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "types": "/src/types",
+  "homepage": "https://yuanyxh.github.io/introduce",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",

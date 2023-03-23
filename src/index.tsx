@@ -8,7 +8,6 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faAngleLeft, faAngleRight);
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

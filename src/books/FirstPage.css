@@ -1,0 +1,18 @@
+.first-page {
+  z-index: 4;
+}
+
+.list {
+  list-style: circle inside;
+  flex: 1;
+  font-size: 0.9em;
+  line-height: 2em;
+}
+
+.introduction p {
+  margin-bottom: 10px;
+  text-indent: 1em;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  color: #666;
+}

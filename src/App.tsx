@@ -1,8 +1,13 @@
 import React from 'react';
 import './App.css';
+import Book from './books/Book';
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <main className="App">
+      <Book />
+    </main>
+  );
 }
 
 export default App;

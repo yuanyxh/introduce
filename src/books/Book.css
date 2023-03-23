@@ -1,0 +1,199 @@
+/* 书本 */
+.book {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 300px;
+  height: 450px;
+  user-select: none;
+  /* 开启 3d */
+  transform-style: preserve-3d;
+  /* 视距 */
+  perspective: 900px;
+  /* 添加过渡完成平滑右移 */
+  transition: all 0.5s;
+}
+
+/* 翻开封面, 书本右移 */
+.book.conduct {
+  transform: translate(50%);
+}
+
+/* 设置点击开始后旋转 */
+.book.conduct > .cover {
+  transform: rotateY(-180deg);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* hover 显示开始按钮 */
+.book:hover .goaway {
+  opacity: 1;
+}
+
+/* 页 */
+.page {
+  position: absolute;
+  inset: 0;
+  /* 开启 3d 以完成正反面布局 */
+  transform-style: preserve-3d;
+  /* 设置旋转圆点 */
+  transform-origin: left;
+  /* 翻页过渡 */
+  transition: transform 0.6s;
+}
+
+/* 翻转类 */
+.page.turn {
+  transform: rotateY(-180deg);
+}
+
+/* 默认标题样式 */
+.page h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.page h3 {
+  font-size: 1em;
+  font-weight: 400;
+  color: #666;
+}
+/* 默认标题样式 */
+
+/* 正反面 */
+.front,
+.opposite {
+  position: absolute;
+  padding: 20px;
+  inset-block: 10px;
+  inset-inline: 0 10px;
+  height: inherit;
+  background-color: #d7a870;
+}
+
+/* 正面 */
+.front {
+  /* 设置距离近于反面以默认显示正面 */
+  transform: translateZ(0.5px);
+}
+
+/* 反面 */
+.opposite {
+  /* 翻转以使内容正常显示 */
+  transform: rotateY(180deg);
+}
+
+/* 行 */
+.row {
+  display: flex;
+  font-size: inherit;
+  gap: 5px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* 添加下划线 */
+.line {
+  flex: 1;
+  box-sizing: border-box;
+  border-bottom: 0.5px dashed #fff;
+}
+
+.line span {
+  margin-left: 6px;
+  color: #666;
+  font-style: italic;
+}
+
+/* 链接块 */
+.link {
+  margin: 15px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: -webkit-fill-available;
+  width: -moz-availabel;
+  width: stretch;
+}
+
+.link a {
+  width: 30px;
+}
+/* 链接块 */
+
+/* 块 */
+.block {
+  margin: 15px 0 20px;
+}
+
+/* 圆图片 */
+img {
+  border-radius: 50%;
+}
+
+/* 翻页控制 */
+.next,
+.prev {
+  position: absolute;
+  bottom: 8px;
+  color: #555;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* 下一页 */
+.next {
+  right: 10px;
+}
+
+/* 上一页 */
+.prev {
+  left: 10px;
+}
+
+/* 企业信息 */
+.company {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.company .time {
+  font-size: 0.8em;
+  color: #333;
+}
+/* 企业信息 */
+
+/* 文本 */
+.project-description,
+.favorite-quotes,
+.author {
+  text-indent: 1em;
+  line-height: 1.5em;
+  font-size: 0.9em;
+}
+
+/* 项目描述 */
+.project-description {
+  margin-top: 10px;
+}
+
+/* 喜欢的名言 */
+.favorite-quotes,
+.author {
+  font-style: italic;
+}
+
+/* 作者 */
+.author {
+  text-align: end;
+}
+
+/* tiga */
+.talk {
+  color: #666;
+}
+/* 文本 */

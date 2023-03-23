@@ -1,0 +1,22 @@
+/* 封底页 */
+.last {
+  z-index: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* 封底页正面 */
+.last > .front {
+  inset-block: 10px;
+  inset-inline-end: 10px;
+  background-color: #d7a870;
+}
+
+/* 封底页反面 */
+.last > .opposite {
+  inset: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: saddlebrown;
+}

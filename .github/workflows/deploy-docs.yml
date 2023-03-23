@@ -1,43 +1,25 @@
-name: 部署简介项目
-
+name: Build and Deploy
 on:
   push:
     branches:
-      # 确保这是你正在使用的分支名称
       - dev
-
 permissions:
   contents: write
-
 jobs:
-  deploy-gh-pages:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          lfs: true
 
-      - name: 设置 Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
-
-      - name: 安装依赖
+      - name: Install and Build 🔧
         run: |
           npm ci
-          npm install
+          npm run build
 
-      - name: 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: npm run build
-
-      - name: 部署项目
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 这是文档部署到的分支名称
           branch: master
           folder: build
